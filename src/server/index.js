@@ -6,7 +6,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 
-let port = 3000 //let port = process.env.PORT
+let port = 3001 //let port = process.env.PORT
 app.listen(port, function() {
 	console.log(
 		'server started on port ' + port

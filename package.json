@@ -4,7 +4,13 @@
   "description": "\"simple project to test and build my authentication system on\"",
   "main": "index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run build:dev\" \"npm run start-server:dev\"",
+    "build": "npm run build:prod && npm run start-server:prod",
+    "build:dev": "webpack --config webpack.config.js",
+    "build:prod": "webpack --config webpack-prod.config.js",
+    "start-server:dev": "nodemon src/server ",
+    "start-server:prod": "NODE_ENV=production forever start forever-config.json"
   },
   "author": "",
   "license": "ISC",
